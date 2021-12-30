@@ -1,0 +1,67 @@
+/*
+	Author = Emre ÖZTOKLU
+	Date   = 15.12.2021
+	Linked List = Baðlý Liste 
+
+	Example_1
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+typedef struct tagNode {
+	int data;
+	struct tagNode* next;
+
+}NODE, *pNODE;
+
+
+pNODE inserttoList(pNODE head, int val) {
+	pNODE temp;
+
+	if ((temp = (pNODE)malloc(sizeof(NODE))) == NULL) {
+		fprintf(stderr, "Can not create a NODE!");
+		exit(EXIT_FAILURE);
+	}
+
+	temp->data = val;
+	temp->next = head;
+	head = temp;
+
+	return head;
+}
+
+
+void printTheList(pNODE head) {
+
+	printf("List is:");
+
+	while (head != NULL) {
+		printf(" %d", head->data);
+		head = head->next;
+	}
+
+	printf("\n");
+}
+
+/*
+int main() {
+	pNODE head = NULL;
+
+	int n, i, x;
+	printf("How many numbers ? \n");
+	scanf("%d", &n);
+
+	for (i = 0; i < n; i++) {
+		printf("Enter the values\n");
+		scanf("%d", &x);
+
+		head = inserttoList(head,x);
+		printTheList(head);
+	}
+
+}
+*/
