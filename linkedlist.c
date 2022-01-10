@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "linkedlist.h"
 
 
@@ -46,7 +49,6 @@ void insertoListnPosition(pNODE *phead, DATATYPE val, size_t npos) {
 	temp2->next = newNode;
 }
 
-//Print All elements in the list
 void printTheList(pNODE *head) {
 
 	pNODE temp = *head;
